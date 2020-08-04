@@ -2,74 +2,67 @@ package CalculaitorMain;
 
 import java.util.Scanner;
 
-
 class Main {
     static class Action extends iMethod {
 
         @Override
-        void summa() {
-        }
+        void summa() {}
 
         @Override
-        void div() {
-        }
+        void div() {}
 
         @Override
-        void min() {
-        }
+        void min() {}
 
         @Override
-        void mult() {
-        }
+        void mult() {}
     }
+        public static void main(String[] args) {
+            
+            int exit = 0;
+            String Greet = "Greetings! This is command line calculator!";
+            String twoNums = ":::Choose two numbers:::";
 
+            Action a = new Action();
+            System.out.println(Greet);
+            System.out.println(twoNums);
 
-    public static void main(String[] args) {
+            Scanner scan = new Scanner(System.in);
+            
+            /// Start loop
+            do{ 
+                
+            System.out.print("First number: ");
+            Double firstNum = scan.nextDouble();
+            System.out.print("Second number: ");
+            Double secondNum = scan.nextDouble();
 
-        //String cont,exit;
+            System.out.println("1.+\n2.-\n3./\n4.*");
+            System.out.println("Choose number of method :");
 
-        String Greet = "Greetings! This is command line calculator!";
-        String twoNums = ":::Choose two numbers:::";
+            int choose = scan.nextInt();
 
-        Action a = new Action();
-        System.out.println(Greet);
-        System.out.println(twoNums);
+                switch (choose) {
+                case 1:
+                    a.summa(firstNum, secondNum);
+                    exit = scan.nextInt();
+                    break;
+                case 2:
+                    a.min(firstNum, secondNum);
+                    exit = scan.nextInt();
+                    break;
+                case 3:
+                    a.div(firstNum, secondNum);
+                    exit = scan.nextInt();
+                    break;
+                case 4:
+                    a.mult(firstNum, secondNum);
+                    exit = scan.nextInt();
+                    break;}
 
-
-        Scanner scan = new Scanner(System.in);
-        int firstNum = scan.nextInt();
-        int secondNum = scan.nextInt();
-
-
-        System.out.println("1.+\n2.-\n3./\n4.*");
-        System.out.println("Choose number of method :");
-
-        int choose = scan.nextInt();
-
-        //int exitContinue = scan.nextInt();
-        switch (choose) {
-            case 1:
-                a.summa(firstNum, secondNum);
-                break;
-            case 2:
-                a.min(firstNum, secondNum);
-                break;
-            case 3:
-                a.div(firstNum, secondNum);
-                break;
-            case 4:
-                a.mult(firstNum, secondNum);
-                break;
-        }
-
-
-
-        }
-
-
-
+             } while (exit!=2);
+            
+            /// End loop
+            System.out.println("The End");
     }
-
-
-
-
+}
