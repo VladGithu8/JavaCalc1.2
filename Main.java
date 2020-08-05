@@ -3,7 +3,10 @@ package CalculaitorMain;
 import java.util.Scanner;
 
 class Main {
-    static class Action extends iMethod {
+    
+        public static void main(String[] args) {
+        
+        class Action extends iMethod {
 
         @Override
         void summa() {}
@@ -17,7 +20,6 @@ class Main {
         @Override
         void mult() {}
     }
-        public static void main(String[] args) {
             
             int exit = 0;
             String Greet = "Greetings! This is command line calculator!";
